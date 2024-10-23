@@ -12,7 +12,7 @@ public class Player_Movi : MonoBehaviour
     private Animator animator;
     private SpriteRenderer spriteRenderer;
 
-    private void Start()
+    private void Awake()
     {
         rig = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
