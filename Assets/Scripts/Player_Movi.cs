@@ -37,14 +37,14 @@ public class Player_Movi : MonoBehaviour
         {
             animator.SetBool("isWalking", true);
 
-            // Define a direção do sprite e ajusta o ponto de ataque
+
             if (direction.x < 0)
             {
-                spriteRenderer.flipX = false; // olhando para a esquerda
+                spriteRenderer.flipX = false;
             }
             else if (direction.x > 0)
             {
-                spriteRenderer.flipX = true; // olhando para a direita
+                spriteRenderer.flipX = true;
             }
         }
         else
@@ -62,17 +62,17 @@ public class Player_Movi : MonoBehaviour
     {
         animator.SetBool("isAttacking", isAttacking);
 
-        // Define um deslocamento de posição com base na direção do personagem
+
         Vector2 attackPosition = (spriteRenderer.flipX)
-            ? new Vector2(transform.position.x + 0.5f, transform.position.y) // Direita
-            : new Vector2(transform.position.x - 0.5f, transform.position.y); // Esquerda
+            ? new Vector2(transform.position.x + 0.5f, transform.position.y) // left
+            : new Vector2(transform.position.x - 0.5f, transform.position.y); // right
 
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPosition, attackRadius, enemyLayer);
 
-        // Itera sobre todos os inimigos atingidos
+
         foreach (Collider2D enemy in hitEnemies)
         {
-            Destroy(enemy.gameObject); // Destrói o inimigo atingido
+            Destroy(enemy.gameObject); 
             Debug.Log("Inimigo destruído: " + enemy.name);
         }
 
