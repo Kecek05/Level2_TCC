@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 732458957343945319}
   - component: {fileID: 732458957343945312}
   - component: {fileID: 732458957343945313}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: EnemySkeleton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -169,7 +169,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   agent: {fileID: 732458957343945319}
-  player: {fileID: 0}
 --- !u!95 &732458957343945313
 Animator:
   serializedVersion: 3
