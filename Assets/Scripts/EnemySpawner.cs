@@ -5,8 +5,6 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour
 {
     [SerializeField] private GameObject enemyPrefab;
-
-    // Start is called before the first frame update
     void Start()
     {
         StartCoroutine(SpawnerCoroutine());
@@ -17,7 +15,7 @@ public class EnemySpawner : MonoBehaviour
         while (true)
         {
             Instantiate(enemyPrefab);
-            yield return new WaitForSecconds(2f);
+            yield return new WaitForSeconds(2f);
         }
     }
 }
