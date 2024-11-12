@@ -631,10 +631,10 @@ PlayerSettings:
     m_VersionCode: 1
     m_VersionName: 
   apiCompatibilityLevel: 6
-  cloudProjectId: 46c21f9a-7107-4018-a5fd-2cb5a7e87f1c
+  cloudProjectId: 
   framebufferDepthMemorylessMode: 0
-  projectName: "level2ter\xE7a"
-  organizationId: sgaltodalapa
+  projectName: 
+  organizationId: 
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0
