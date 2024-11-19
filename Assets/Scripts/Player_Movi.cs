@@ -15,7 +15,7 @@ public class Player_Movi : MonoBehaviour
     [SerializeField] private float attackRadius = 1f;
     private bool isAttacking;
     [SerializeField] private LayerMask enemyLayer;
-
+    private Vector2 attackPos;
     private void Awake()
     {
         rig = GetComponent<Rigidbody2D>();
@@ -62,18 +62,20 @@ public class Player_Movi : MonoBehaviour
     {
         animator.SetBool("isAttacking", isAttacking);
 
+        if(spriteRenderer.flipX)
+        {
+            attackPos = new Vector2(transform.position.x + 0.5f, transform.position.y); // left
+        } else
+        {
+            attackPos = new Vector2(transform.position.x - 0.5f, transform.position.y); // right
+        }
 
-        Vector2 attackPosition = (spriteRenderer.flipX)
-            ? new Vector2(transform.position.x + 0.5f, transform.position.y) // left
-            : new Vector2(transform.position.x - 0.5f, transform.position.y); // right
-
-        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPosition, attackRadius, enemyLayer);
+        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPos, attackRadius, enemyLayer);
 
 
         foreach (Collider2D enemy in hitEnemies)
         {
             Destroy(enemy.gameObject); 
-            Debug.Log("Inimigo destruído: " + enemy.name);
         }
 
         yield return new WaitForSeconds(attackCoolDown);
@@ -84,11 +86,27 @@ public class Player_Movi : MonoBehaviour
     // Debug
     private void OnDrawGizmosSelected()
     {
-        Vector2 attackPosition = (spriteRenderer != null && spriteRenderer.flipX)
-            ? new Vector2(transform.position.x + 0.5f, transform.position.y)
-            : new Vector2(transform.position.x - 0.5f, transform.position.y);
+       
+        if(spriteRenderer != null)
+        {
+            // in play mode
+            if (spriteRenderer.flipX)
+            {
+                attackPos = new Vector2(transform.position.x + 0.5f, transform.position.y); // left
+            }
+            else
+            {
+                attackPos = new Vector2(transform.position.x - 0.5f, transform.position.y); // right
+            }
+        } else
+        {
+            // not in playmode
+            attackPos = new Vector2(transform.position.x - 0.5f, transform.position.y); // right
+
+        }
+
 
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(attackPosition, attackRadius);
+        Gizmos.DrawWireSphere(attackPos, attackRadius);
     }
 }

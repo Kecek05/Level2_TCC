@@ -169,6 +169,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   agent: {fileID: 732458957343945319}
+  spriteRenderer: {fileID: 732458957343945339}
 --- !u!95 &732458957343945313
 Animator:
   serializedVersion: 3
