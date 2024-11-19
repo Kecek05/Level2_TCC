@@ -287,7 +287,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 601184024}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2090160516}
+        m_TargetAssemblyTypeName: EndGameMenu, Assembly-CSharp
+        m_MethodName: QuitGameBtn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &601184024
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -607,7 +619,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1398504249}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2090160516}
+        m_TargetAssemblyTypeName: EndGameMenu, Assembly-CSharp
+        m_MethodName: PlayAgainBtn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1398504249
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -926,6 +950,7 @@ GameObject:
   - component: {fileID: 2090160514}
   - component: {fileID: 2090160513}
   - component: {fileID: 2090160512}
+  - component: {fileID: 2090160516}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1015,3 +1040,15 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &2090160516
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2090160511}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f8232fb225577743b0f577c04daedff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

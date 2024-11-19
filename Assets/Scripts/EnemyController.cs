@@ -9,18 +9,13 @@ public class EnemyController : MonoBehaviour
 
     [SerializeField] private NavMeshAgent agent;
     private GameObject player;
-    private SpriteRenderer spriteRenderer;
+    [SerializeField] private SpriteRenderer spriteRenderer;
 
-    private void Awake()
-    {
-        spriteRenderer = GetComponent<SpriteRenderer>();
-    }
 
     void Start()
     {
         player = GameObject.FindWithTag("Player");
 
-        //cuz its 2D, not rotate
         agent.updateRotation = false;
         agent.updateUpAxis = false;
 
@@ -33,11 +28,11 @@ public class EnemyController : MonoBehaviour
 
         if (player.transform.position.x < transform.position.x)
         {
-            spriteRenderer.flipX = false;
+            spriteRenderer.flipX = true;
         }
         else if (player.transform.position.x > transform.position.x)
         {
-            spriteRenderer.flipX = true;
+            spriteRenderer.flipX = false;
         }
     }
 
